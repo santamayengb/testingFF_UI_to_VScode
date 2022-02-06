@@ -1,3 +1,4 @@
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -171,14 +172,33 @@ class _AuthPhone2WidgetState extends State<AuthPhone2Widget> {
                                       if (!formKey.currentState.validate()) {
                                         return;
                                       }
-                                      await Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              OtpVerify3Widget(
-                                            dt: phoneTextFieldController.text,
+                                      if (phoneTextFieldController
+                                              .text.isEmpty ||
+                                          !phoneTextFieldController.text
+                                              .startsWith('+')) {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                                'Phone Number is required and has to start with +.'),
                                           ),
-                                        ),
+                                        );
+                                        return;
+                                      }
+                                      await beginPhoneAuth(
+                                        context: context,
+                                        phoneNumber:
+                                            phoneTextFieldController.text,
+                                        onCodeSent: () async {
+                                          await Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  OtpVerify3Widget(),
+                                            ),
+                                            (r) => false,
+                                          );
+                                        },
                                       );
                                     },
                                     text: 'SEND OTP',

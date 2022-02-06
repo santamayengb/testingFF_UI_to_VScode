@@ -1,48 +1,40 @@
 {
   "project_info": {
-    "project_number": "69127391122",
-    "project_id": "restaurantapp-f4a48",
-    "storage_bucket": "restaurantapp-f4a48.appspot.com"
+    "project_number": "793577407200",
+    "project_id": "test-597d0",
+    "storage_bucket": "test-597d0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:69127391122:android:21cd202ad6e0ef9743234b",
+        "mobilesdk_app_id": "1:793577407200:android:7ce41f1fdd12cb738c8685",
         "android_client_info": {
           "package_name": "com.flutterflow.foodwifirestaurantpartnerapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "69127391122-9nrak8bbm3gq3dej1v5hjorq2nrrkks5.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.flutterflow.foodwifirestaurantpartnerapp",
-            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
-          }
-        },
-        {
-          "client_id": "69127391122-605p28fl2ejddm2vmd14s6mnvmqe58av.apps.googleusercontent.com",
+          "client_id": "793577407200-v859jdialeosdnffk4c4vj34h80f3af9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDkcBgGmDbsKiuKI1janMWswouiAbxQfPc"
+          "current_key": "AIzaSyDNQv9FY_mWq73kA5Jp2adGSOJpdAXx3gs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "69127391122-605p28fl2ejddm2vmd14s6mnvmqe58av.apps.googleusercontent.com",
+              "client_id": "793577407200-v859jdialeosdnffk4c4vj34h80f3af9.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "69127391122-6tsu92nmgs412di887p488u669hn9d7s.apps.googleusercontent.com",
+              "client_id": "793577407200-4qeidm3uoatl8qtnm7l8jbgj792s5bhd.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.flutterflow.foodwifirestaurantpartnerapp"
+                "bundle_id": "com.flutterflow.weddingapp"
               }
             }
           ]

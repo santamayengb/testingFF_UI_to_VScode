@@ -1,7 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../home_page/home_page_widget.dart';
+import '../otp_verify_3/otp_verify3_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -206,7 +206,7 @@ class _OwnerRegistration4WidgetState extends State<OwnerRegistration4Widget> {
                   await Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePageWidget(),
+                      builder: (context) => OtpVerify3Widget(),
                     ),
                     (r) => false,
                   );

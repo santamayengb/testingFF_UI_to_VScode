@@ -1,6 +1,8 @@
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../home_page/home_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -168,8 +170,36 @@ class _OtpVerify3WidgetState extends State<OtpVerify3Widget> {
                               children: [
                                 Expanded(
                                   child: FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      if (!formKey.currentState.validate()) {
+                                        return;
+                                      }
+                                      if (oTPTextFieldController.text.isEmpty) {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                                'Enter SMS verification code.'),
+                                          ),
+                                        );
+                                        return;
+                                      }
+                                      final phoneVerifiedUser =
+                                          await verifySmsCode(
+                                        context: context,
+                                        smsCode: oTPTextFieldController.text,
+                                      );
+                                      if (phoneVerifiedUser == null) {
+                                        return;
+                                      }
+                                      await Navigator.pushAndRemoveUntil(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              HomePageWidget(),
+                                        ),
+                                        (r) => false,
+                                      );
                                     },
                                     text: 'VERIFY',
                                     options: FFButtonOptions(

@@ -8,7 +8,7 @@ import 'auth/auth_util.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:copyfw/auth_onboarding_1/auth_onboarding1_widget.dart';
-import 'package:copyfw/owner_registration_4/owner_registration4_widget.dart';
+import 'package:copyfw/home_page/home_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 
 void main() async {
@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
               ),
             )
           : currentUser.loggedIn
-              ? OwnerRegistration4Widget()
+              ? HomePageWidget()
               : AuthOnboarding1Widget(),
     );
   }

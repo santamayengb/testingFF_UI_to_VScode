@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>69127391122-6tsu92nmgs412di887p488u669hn9d7s.apps.googleusercontent.com</string>
+	<string>793577407200-hiofd45ra8aasl6fdb17e45pk2kabm14.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.69127391122-6tsu92nmgs412di887p488u669hn9d7s</string>
+	<string>com.googleusercontent.apps.793577407200-hiofd45ra8aasl6fdb17e45pk2kabm14</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>69127391122-9nrak8bbm3gq3dej1v5hjorq2nrrkks5.apps.googleusercontent.com</string>
+	<string>793577407200-m1u1djt28kk1pmth6scp1lut22f91qb2.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCc1j3Pi5tl-xvdwg-PP0u1X6IOvdCMg6c</string>
+	<string>AIzaSyBloT7CYbw2Ey0tYS3RN6iZA4KZlHRG3o0</string>
 	<key>GCM_SENDER_ID</key>
-	<string>69127391122</string>
+	<string>793577407200</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.flutterflow.foodwifirestaurantpartnerapp</string>
 	<key>PROJECT_ID</key>
-	<string>restaurantapp-f4a48</string>
+	<string>test-597d0</string>
 	<key>STORAGE_BUCKET</key>
-	<string>restaurantapp-f4a48.appspot.com</string>
+	<string>test-597d0.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:69127391122:ios:286791b9b16c038843234b</string>
+	<string>1:793577407200:ios:e17bd2417ca783628c8685</string>
 </dict>
 </plist>
