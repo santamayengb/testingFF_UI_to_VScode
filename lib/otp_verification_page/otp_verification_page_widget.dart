@@ -6,8 +6,8 @@ import '../home_page/home_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class OtpVerify3Widget extends StatefulWidget {
-  const OtpVerify3Widget({
+class OtpVerificationPageWidget extends StatefulWidget {
+  const OtpVerificationPageWidget({
     Key key,
     this.dt,
   }) : super(key: key);
@@ -15,10 +15,11 @@ class OtpVerify3Widget extends StatefulWidget {
   final String dt;
 
   @override
-  _OtpVerify3WidgetState createState() => _OtpVerify3WidgetState();
+  _OtpVerificationPageWidgetState createState() =>
+      _OtpVerificationPageWidgetState();
 }
 
-class _OtpVerify3WidgetState extends State<OtpVerify3Widget> {
+class _OtpVerificationPageWidgetState extends State<OtpVerificationPageWidget> {
   TextEditingController oTPTextFieldController;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();

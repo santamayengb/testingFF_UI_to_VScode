@@ -1,19 +1,17 @@
-import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../otp_verify_3/otp_verify3_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AuthPhone2Widget extends StatefulWidget {
-  const AuthPhone2Widget({Key key}) : super(key: key);
+class PhoneAuthPageWidget extends StatefulWidget {
+  const PhoneAuthPageWidget({Key key}) : super(key: key);
 
   @override
-  _AuthPhone2WidgetState createState() => _AuthPhone2WidgetState();
+  _PhoneAuthPageWidgetState createState() => _PhoneAuthPageWidgetState();
 }
 
-class _AuthPhone2WidgetState extends State<AuthPhone2Widget> {
+class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
   TextEditingController phoneTextFieldController;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -21,7 +19,7 @@ class _AuthPhone2WidgetState extends State<AuthPhone2Widget> {
   @override
   void initState() {
     super.initState();
-    phoneTextFieldController = TextEditingController(text: '+91');
+    phoneTextFieldController = TextEditingController(text: '+919501179924');
   }
 
   @override
@@ -42,40 +40,37 @@ class _AuthPhone2WidgetState extends State<AuthPhone2Widget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/LOGO.png',
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.cover,
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
-                            child: Text(
-                              'foodwifi',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Montserrat',
-                                color: Color(0xFFD91616),
-                                fontSize: 27,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            'Restaurant Partner',
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Image.asset(
+                          'assets/images/LOGO.png',
+                          width: 100,
+                          height: 100,
+                          fit: BoxFit.cover,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
+                          child: Text(
+                            'foodwifi',
                             style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Spartan',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w300,
+                              fontFamily: 'Montserrat',
+                              color: Color(0xFFD91616),
+                              fontSize: 27,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                        Text(
+                          'Restaurant Partner',
+                          style: FlutterFlowTheme.bodyText1.override(
+                            fontFamily: 'Spartan',
+                            fontSize: 12,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -138,10 +133,6 @@ class _AuthPhone2WidgetState extends State<AuthPhone2Widget> {
                                       ),
                                       filled: true,
                                       fillColor: Color(0xFFD7D7D7),
-                                      prefixIcon: Icon(
-                                        Icons.phone_android,
-                                        color: Color(0xFF959595),
-                                      ),
                                     ),
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Spartan',
@@ -150,9 +141,11 @@ class _AuthPhone2WidgetState extends State<AuthPhone2Widget> {
                                     keyboardType: TextInputType.phone,
                                     validator: (val) {
                                       if (val.isEmpty) {
-                                        return 'Field is required';
+                                        return 'Enter Phone Number';
                                       }
-
+                                      if (val.length < 10) {
+                                        return '10';
+                                      }
                                       return null;
                                     },
                                   ),
@@ -163,61 +156,28 @@ class _AuthPhone2WidgetState extends State<AuthPhone2Widget> {
                           Expanded(
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Expanded(
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      if (!formKey.currentState.validate()) {
-                                        return;
-                                      }
-                                      if (phoneTextFieldController
-                                              .text.isEmpty ||
-                                          !phoneTextFieldController.text
-                                              .startsWith('+')) {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                                'Phone Number is required and has to start with +.'),
-                                          ),
-                                        );
-                                        return;
-                                      }
-                                      await beginPhoneAuth(
-                                        context: context,
-                                        phoneNumber:
-                                            phoneTextFieldController.text,
-                                        onCodeSent: () async {
-                                          await Navigator.pushAndRemoveUntil(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  OtpVerify3Widget(),
-                                            ),
-                                            (r) => false,
-                                          );
-                                        },
-                                      );
-                                    },
-                                    text: 'SEND OTP',
-                                    options: FFButtonOptions(
-                                      width: 130,
-                                      height: 40,
-                                      color: FlutterFlowTheme.primaryColor,
-                                      textStyle:
-                                          FlutterFlowTheme.subtitle2.override(
-                                        fontFamily: 'Spartan',
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                      ),
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1,
-                                      ),
-                                      borderRadius: 5,
+                                FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'SEND OTP',
+                                  options: FFButtonOptions(
+                                    width: 340,
+                                    height: 40,
+                                    color: FlutterFlowTheme.primaryColor,
+                                    textStyle:
+                                        FlutterFlowTheme.subtitle2.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
                                     ),
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1,
+                                    ),
+                                    borderRadius: 12,
                                   ),
                                 ),
                               ],

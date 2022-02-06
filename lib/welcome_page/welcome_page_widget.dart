@@ -1,19 +1,19 @@
-import '../auth_phone_2/auth_phone2_widget.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../phone_auth_page/phone_auth_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AuthOnboarding1Widget extends StatefulWidget {
-  const AuthOnboarding1Widget({Key key}) : super(key: key);
+class WelcomePageWidget extends StatefulWidget {
+  const WelcomePageWidget({Key key}) : super(key: key);
 
   @override
-  _AuthOnboarding1WidgetState createState() => _AuthOnboarding1WidgetState();
+  _WelcomePageWidgetState createState() => _WelcomePageWidgetState();
 }
 
-class _AuthOnboarding1WidgetState extends State<AuthOnboarding1Widget>
+class _WelcomePageWidgetState extends State<WelcomePageWidget>
     with TickerProviderStateMixin {
   final animationsMap = {
     'columnOnPageLoadAnimation': AnimationInfo(
@@ -100,7 +100,7 @@ class _AuthOnboarding1WidgetState extends State<AuthOnboarding1Widget>
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                AuthPhone2Widget(),
+                                                PhoneAuthPageWidget(),
                                           ),
                                           (r) => false,
                                         );

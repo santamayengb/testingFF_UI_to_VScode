@@ -7,7 +7,7 @@ import 'auth/auth_util.dart';
 
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/internationalization.dart';
-import 'package:copyfw/auth_onboarding_1/auth_onboarding1_widget.dart';
+import 'package:copyfw/welcome_page/welcome_page_widget.dart';
 import 'package:copyfw/home_page/home_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 
@@ -81,7 +81,7 @@ class _MyAppState extends State<MyApp> {
             )
           : currentUser.loggedIn
               ? HomePageWidget()
-              : AuthOnboarding1Widget(),
+              : WelcomePageWidget(),
     );
   }
 }

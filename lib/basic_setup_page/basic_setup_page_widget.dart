@@ -1,19 +1,18 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../otp_verify_3/otp_verify3_widget.dart';
+import '../otp_verification_page/otp_verification_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class OwnerRegistration4Widget extends StatefulWidget {
-  const OwnerRegistration4Widget({Key key}) : super(key: key);
+class BasicSetupPageWidget extends StatefulWidget {
+  const BasicSetupPageWidget({Key key}) : super(key: key);
 
   @override
-  _OwnerRegistration4WidgetState createState() =>
-      _OwnerRegistration4WidgetState();
+  _BasicSetupPageWidgetState createState() => _BasicSetupPageWidgetState();
 }
 
-class _OwnerRegistration4WidgetState extends State<OwnerRegistration4Widget> {
+class _BasicSetupPageWidgetState extends State<BasicSetupPageWidget> {
   TextEditingController emailController;
   TextEditingController fullNameController;
   TextEditingController phoneNumberController;
@@ -206,7 +205,7 @@ class _OwnerRegistration4WidgetState extends State<OwnerRegistration4Widget> {
                   await Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => OtpVerify3Widget(),
+                      builder: (context) => OtpVerificationPageWidget(),
                     ),
                     (r) => false,
                   );
