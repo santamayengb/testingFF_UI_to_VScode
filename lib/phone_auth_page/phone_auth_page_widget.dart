@@ -1,6 +1,8 @@
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../otp_verification_page/otp_verification_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -160,8 +162,37 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    if (!formKey.currentState.validate()) {
+                                      return;
+                                    }
+                                    if (phoneTextFieldController.text.isEmpty ||
+                                        !phoneTextFieldController.text
+                                            .startsWith('+')) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                              'Phone Number is required and has to start with +.'),
+                                        ),
+                                      );
+                                      return;
+                                    }
+                                    await beginPhoneAuth(
+                                      context: context,
+                                      phoneNumber:
+                                          phoneTextFieldController.text,
+                                      onCodeSent: () async {
+                                        await Navigator.pushAndRemoveUntil(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                OtpVerificationPageWidget(),
+                                          ),
+                                          (r) => false,
+                                        );
+                                      },
+                                    );
                                   },
                                   text: 'SEND OTP',
                                   options: FFButtonOptions(
