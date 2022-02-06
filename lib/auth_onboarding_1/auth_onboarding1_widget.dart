@@ -105,7 +105,7 @@ class _AuthOnboarding1WidgetState extends State<AuthOnboarding1Widget>
                                           (r) => false,
                                         );
                                       },
-                                      text: 'GET STARTED',
+                                      text: 'start',
                                       options: FFButtonOptions(
                                         width: 130,
                                         height: 40,
