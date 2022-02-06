@@ -193,13 +193,12 @@ class _OtpVerificationPageWidgetState extends State<OtpVerificationPageWidget> {
                                       if (phoneVerifiedUser == null) {
                                         return;
                                       }
-                                      await Navigator.pushAndRemoveUntil(
+                                      await Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
                                               HomePageWidget(),
                                         ),
-                                        (r) => false,
                                       );
                                     },
                                     text: 'VERIFY',
